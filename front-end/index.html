@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>LW BarberShop</title>
+</head>
+<body>
+    <main id="container">
+        <div class="agenda">
+            <div class="day">
+                <button onclick="goPreviousDate()" class="previous" id="arrowUp"></button>
+                <span><Strong id="previousDay"></Strong> de <Strong id="previousDayMonth"></Strong></span>
+                <span class="actualDay"><Strong id="actualDay"></Strong> de <Strong id="actualDayMonth"></Strong></span>
+                <span><Strong id="nextDay"></Strong> de <Strong id="nextDayMonth"></Strong></span>
+                <button onclick="goNextDate()" class="next" id="arrowDown"></button>
+            </div>
+            <div class="hoursAndCustomers">
+                <div class="hours">
+                    <span>8:00</span>
+                    <span>9:00</span>
+                    <span>10:00</span>
+                    <span>11:00</span>
+                    <span>14:00</span>
+                    <span>15:00</span>
+                    <span>16:00</span>
+                    <span>17:00</span>
+                </div>
+                <div class="customers">
+                    <span id="0">Error in API</span>
+                    <span id="1">Error in API</span>
+                    <span id="2">Error in API</span>
+                    <span id="3">Error in API</span>
+                    <span id="4">Error in API</span>
+                    <span id="5">Error in API</span>
+                    <span id="6">Error in API</span>
+                    <span id="7">Error in API</span>
+                </div>
+                <div class="editButtons">
+                    <button id="edit" onclick="openModal(0)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(1)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(2)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(3)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(4)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(5)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(6)"><img src="res/edit-svgrepo-com.svg"></button>
+                    <button id="edit" onclick="openModal(7)"><img src="res/edit-svgrepo-com.svg"></button>
+                </div>
+                <div class="deleteButtons">
+                    <button id="delete" onclick="deleteSchedule(0)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(1)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(2)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(3)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(4)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(5)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(6)"><img src="res/delete-svgrepo-com.svg"></button>
+                    <button id="delete" onclick="deleteSchedule(7)"><img src="res/delete-svgrepo-com.svg"></button>
+                </div>
+            </div>
+        </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()" id="close">&times;</span>
+      <label for="nameInput">Digite seu nome</label>
+      <input type="text" id="nameInput" class="modal-input">
+      <button onclick="submitName()" class="send modal-button">Enviar</button>
+
+    </div>
+  </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
